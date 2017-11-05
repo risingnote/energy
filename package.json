@@ -1,0 +1,21 @@
+{
+  "name": "energy",
+  "version": "0.1.0",
+  "description": "Tariff comparison",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "start": "node src/index.js"
+  },
+  "keywords": ["utility"],
+  "author": "Jonathan Evans",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.7.4"
+  },
+  "dependencies": {}
+}
