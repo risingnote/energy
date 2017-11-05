@@ -7,6 +7,10 @@
     "test": "jest --watch",
     "start": "node src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risingnote/energy.git"
+  },
   "keywords": ["utility"],
   "author": "Jonathan Evans",
   "license": "ISC",
