@@ -1,4 +1,4 @@
-const { runIfCost, runIfUsage } = require('./fileParser')
+const { runIfCost, runIfUsage, runFromFile } = require('./fileParser')
 
 jest.mock('./cost')
 const { costByTariff } = require('./cost')
@@ -32,8 +32,21 @@ describe('Parse input and determine correct operation to run', () => {
     expect(annualUsage).toBeCalledWith('greener-energy', 'power', '40', prices)
   })
 
-  it('does not parse usage line with missing param', () => {
-    expect(runIfUsage('usage greener-energy power')).toBeFalsy()
-    expect(annualUsage).toHaveBeenCalledTimes(0)
+  it('parses a test file', done => {
+    const filePrices = {}
+    runFromFile('./resources/input.test.txt', filePrices)
+      .then(() => {
+        expect(costByTariff).toHaveBeenCalledTimes(1)
+        expect(costByTariff).toBeCalledWith(
+          { power: '100', gas: '200' },
+          prices
+        )
+        expect(annualUsage).toHaveBeenCalledTimes(1)
+        expect(annualUsage).toBeCalledWith('verde', 'gas', '50', prices)
+        done()
+      })
+      .catch(err => {
+        done.fail(err)
+      })
   })
 })

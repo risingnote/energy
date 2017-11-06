@@ -1,13 +1,16 @@
 # Tariff comparison utility
 
-## Example usage
-```
-cost 2000 2300
-cost 2000 0
-usage greener-energy power 40
-usage better-energy gas 25
-```
+## Dependencies
+[nodejs](https://nodejs.org) - tested against v8.6.0.
 
-## Improvements
+## Build and Test
+```npm install --production```
 
-Expect simplified annual cost implementation using pattern matching and case classes.
+```npm test```
+
+## Usage
+```npm start```
+
+Inputs loaded from ```./resources```:
+ - ```input.txt``` input commands
+ - ```prices.json``` tariff prices
