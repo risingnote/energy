@@ -4,7 +4,7 @@
 [nodejs](https://nodejs.org) - tested against v8.6.0.
 
 ## Build and Test
-```npm install --production```
+```npm install```
 
 ```npm test```
 

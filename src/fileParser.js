@@ -20,7 +20,7 @@ const runIfCost = (line, prices) => {
     const input = { power: costMatch[1], gas: costMatch[2] }
 
     costByTariff(input, prices)((tariff, cost) =>
-      console.log(`  ${tariff} £${cost}`)
+      console.log(`  ${tariff.padEnd(18, ' ')} £${cost}`)
     )
     return true
   } else {
